@@ -10,3 +10,98 @@
   font-weight: normal;
   font-family: 'Poppins', sans-serif;
 }
+
+@layer components {
+  .base-button {
+    @apply rounded-xl py-2 px-6 disabled:opacity-50;
+  }
+
+  .card {
+    @apply p-3 rounded-md bg-white shadow-md;
+  }
+  .chip-red {
+    @apply base-chip bg-red;
+  }
+  .chip-primary {
+    @apply base-chip bg-primary;
+  }
+  .chip-dark {
+    @apply base-chip bg-gray-800;
+  }
+  .chip-success {
+    @apply base-chip bg-green-400;
+  }
+  .chip-blue {
+    @apply base-chip bg-blue-500;
+  }
+  .chip.active {
+    @apply border-primary text-primary bg-primary-100 font-semibold;
+  }
+
+  .modal-wrapper {
+    @apply flex-center fixed top-0 left-0 right-0 bottom-0 h-screen w-screen bg-[#00000077] z-modal animate-fadeIn;
+  }
+  .modal-container {
+    @apply flex flex-col bg-white p-3 rounded-xl h-[80vh] max-w-6xl w-[90vw] max-h-[900px] min-h-96;
+  }
+}
+
+@layer utilities {
+  .disable-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+  }
+
+  .absolute-center {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
+  .bottom-center {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2;
+  }
+  .bottom-half-center {
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .flex-between {
+    @apply flex justify-between;
+  }
+  .flex-center-between {
+    @apply flex items-center justify-between;
+  }
+  .flex-center-around {
+    @apply flex items-center justify-around;
+  }
+  .flex-center-end {
+    @apply flex items-center justify-end;
+  }
+
+  .overflow-ellipsis {
+    @apply whitespace-nowrap overflow-hidden text-ellipsis;
+  }
+
+  .animated-link {
+    @apply text-primary hover:underline;
+  }
+
+  .max-container {
+    @apply max-w-[1300px] mx-auto;
+  }
+
+  .placeholder-yew3 {
+    @apply bg-yewLogo3 bg-no-repeat bg-center bg-contain;
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+}
